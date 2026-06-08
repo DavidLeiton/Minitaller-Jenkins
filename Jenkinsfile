@@ -120,13 +120,13 @@ pipeline {
           sh '''
             echo "${REGISTRY_TOKEN}" | docker login ghcr.io -u "${REGISTRY_USER}" --password-stdin
 
-            docker tag buscaminas-develop:${BUILD_NUMBER} ghcr.io/DavidLeiton/buscaminas:latest
-            docker tag buscaminas-develop:${BUILD_NUMBER} ghcr.io/DavidLeiton/buscaminas:${BUILD_NUMBER}
-            docker tag buscaminas-develop:${BUILD_NUMBER} ghcr.io/DavidLeiton/buscaminas:${GIT_COMMIT_SHORT}
+            docker tag buscaminas-develop:${BUILD_NUMBER} ghcr.io/davidleiton/buscaminas:latest
+            docker tag buscaminas-develop:${BUILD_NUMBER} ghcr.io/davidleiton/buscaminas:${BUILD_NUMBER}
+            docker tag buscaminas-develop:${BUILD_NUMBER} ghcr.io/davidleiton/buscaminas:${GIT_COMMIT_SHORT}
 
-            docker push ghcr.io/DavidLeiton/buscaminas:latest
-            docker push ghcr.io/DavidLeiton/buscaminas:${BUILD_NUMBER}
-            docker push ghcr.io/DavidLeiton/buscaminas:${GIT_COMMIT_SHORT}
+            docker push ghcr.io/davidleiton/buscaminas:latest
+            docker push ghcr.io/davidleiton/buscaminas:${BUILD_NUMBER}
+            docker push ghcr.io/davidleiton/buscaminas:${GIT_COMMIT_SHORT}
           '''
         }
       }
